@@ -5,18 +5,18 @@
   },
   "basic": {
     "business_type": "建築設計事務所",
-    "name_en": "MORI Architects",
-    "name_ja": "森建築設計事務所",
+    "name_en": "Atelique Mora",
+    "name_ja": "建築設計事務所",
     "tagline": "土地と暮らしの間に、建築を置く。",
     "area": "鎌倉駅徒歩6分",
-    "address": "神奈川県鎌倉市御成町99-99 鎌倉アネックス2F",
-    "tel": "0467-99-1188",
+    "address": "神奈川県鎌倉市由比ガ浜1-88-88",
+    "tel": "0467-00-7777",
     "hours": "平日 10:00 - 18:00（土日祝は予約制）",
-    "email": "contact@mori-arch.example"
+    "email": "studio@ateliquemora.example.com"
   },
   "philosophy": {
     "headline": "土地と暮らしの間に、建築を置く。",
-    "body": "森建築設計事務所は、その土地が持つ歴史・地形・光・風と、住まう人の暮らしの輪郭を読み取り、その間にそっと建築を置くことを大切にしています。新築・リノベーション・店舗、規模を問わず、設計は対話から始まります。"
+    "body": "アトリーク・モラ設計事務所は、その土地が持つ歴史・地形・光・風と、住まう人の暮らしの輪郭を読み取り、その間にそっと建築を置くことを大切にしています。新築・リノベーション・店舗、規模を問わず、設計は対話から始まります。"
   },
   "works": [
     {"title": "稲村ヶ崎の家", "year": 2025, "category": "新築住宅", "summary": "海風を抜けに、山影を背に。長期優良住宅認定を取得した木造2階建て。"},
@@ -42,7 +42,7 @@
     {"step": 7, "name": "引き渡し・1年点検", "summary": "1年点検と季節ごとの暮らしの聞き取り。"}
   ],
   "profile": {
-    "name": "森 行雄",
+    "name": "水凪 恒一",
     "role": "代表",
     "credentials": ["一級建築士（第999999号）", "JIA日本建築家協会会員", "長期優良住宅技術評価員"],
     "career": "東京の設計事務所で10年勤務後、2014年に鎌倉で独立。新築・リノベーションを中心に累計58件の設計を手がける。",
@@ -50,7 +50,7 @@
   },
   "contact": {
     "ui_type": "external_link",
-    "form_url": "https://mori-arch.example/contact",
+    "form_url": "https://ateliquemora.example.com/contact",
     "free_consultation": true
   },
   "design": {
