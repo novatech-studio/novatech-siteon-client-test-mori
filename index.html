@@ -11,9 +11,10 @@
   <meta property="og:title" content="Atelique Mora｜鎌倉の建築設計事務所｜住宅・リノベーション">
   <meta property="og:description" content="鎌倉・由比ガ浜の一級建築士事務所。住宅・店舗・リノベーションを、光と余白を軸に設計します。">
   <meta property="og:url" content="https://ateliquemora.example.com/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=65&fm=webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#FAFAF8">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=65&fm=webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@400&display=swap">
@@ -29,7 +30,23 @@
       .marquee-track {
         animation: none !important;
       }
-    </style>
+    
+    /* Works カード重なり防止 */
+    .work-card, .works-card, [class*="work-card"], [class*="works-item"] {
+      position: relative;
+      overflow: hidden;
+    }
+
+  
+    /* Access テキスト見切れ修正 */
+    .access-info, .address-block, [class*="access-"] p {
+      overflow: visible;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      min-width: 0;
+    }
+
+  </style>
   </noscript>
   <style>
     :root {
@@ -206,7 +223,7 @@
       align-items: end;
       background:
         linear-gradient(rgba(42, 40, 36, 0.55), rgba(42, 40, 36, 0.55)),
-        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80") center/cover no-repeat;
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=65&fm=webp") center/cover no-repeat;
       color: #f5f2eb;
     }
 
@@ -974,7 +991,7 @@
       "name": "Atelique Mora",
       "alternateName": "アトリーク・モラ設計事務所",
       "url": "https://ateliquemora.example.com/",
-      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=65&fm=webp",
       "description": "鎌倉・由比ガ浜を拠点に住宅、店舗、リノベーションを手掛ける一級建築士事務所。",
       "email": "studio@ateliquemora.example.com",
       "telephone": "+81-467-00-7777",
@@ -1012,13 +1029,13 @@
       </a>
       <nav class="site-nav" aria-label="主要ナビゲーション">
         <ul>
-          <li><a href="#philosophy">Philosophy</a></li>
-          <li><a href="#works">Works</a></li>
-          <li><a href="#strengths">Strengths</a></li>
-          <li><a href="#flow">Flow</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#access">Access</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#philosophy">設計理念</a></li>
+          <li><a href="#works">実績</a></li>
+          <li><a href="#strengths">こだわり</a></li>
+          <li><a href="#flow">相談の流れ</a></li>
+          <li><a href="#about">事務所案内</a></li>
+          <li><a href="#access">アクセス</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
         </ul>
       </nav>
     </div>
@@ -1097,19 +1114,19 @@
           </div>
           <div class="philosophy-visuals scale-in delay-1">
             <figure class="card-image">
-              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop" alt="自然光のリビング空間" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=640&h=480&fit=crop&q=65" alt="自然光のリビング空間" loading="lazy">
             </figure>
             <div class="detail-grid">
               <article class="detail-card">
                 <figure>
-                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop" alt="木材とコンクリートの素材感" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=480&h=320&fit=crop&q=65" alt="木材とコンクリートの素材感" loading="lazy">
                 </figure>
                 <h3>素材の静かな対比</h3>
                 <p>木の温度感とコンクリートの抑制を並置し、穏やかな緊張感を生み出します。</p>
               </article>
               <article class="detail-card">
                 <figure>
-                  <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop" alt="打ち合わせスペース" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop&q=65" alt="打ち合わせスペース" loading="lazy">
                 </figure>
                 <h3>対話から始める設計</h3>
                 <p>初回の相談では、敷地条件と暮らし方の優先順位を整理し、設計の骨格を共有します。</p>
@@ -1130,7 +1147,7 @@
         <div class="works-grid">
           <article class="works-card fade-up">
             <figure>
-              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=640&h=480&fit=crop" alt="稲村ヶ崎の家・海を望む外観" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1571941540328-e8a8e6a55b6e?w=640&h=480&fit=crop&q=65" alt="稲村ヶ崎の家・海を望む外観" loading="lazy">
             </figure>
             <div class="works-body">
               <span class="works-meta">Residence / Inamuragasaki</span>
@@ -1140,7 +1157,7 @@
           </article>
           <article class="works-card fade-up delay-1">
             <figure>
-              <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=640&h=480&fit=crop" alt="大町のリノベーション・コンクリートと木" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=640&h=480&fit=crop&q=65" alt="大町のリノベーション・コンクリートと木" loading="lazy">
             </figure>
             <div class="works-body">
               <span class="works-meta">Renovation / Omachi</span>
@@ -1150,7 +1167,7 @@
           </article>
           <article class="works-card fade-up delay-2">
             <figure>
-              <img src="https://images.unsplash.com/photo-1600566753086-00f18f6b6306?w=640&h=480&fit=crop" alt="材木座のアトリエ兼住居" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600566753086-00f18f6b6306?w=640&h=480&fit=crop&q=65" alt="材木座のアトリエ兼住居" loading="lazy">
             </figure>
             <div class="works-body">
               <span class="works-meta">Atelier House / Zaimokuza</span>
@@ -1160,7 +1177,7 @@
           </article>
           <article class="works-card fade-up">
             <figure>
-              <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=640&h=480&fit=crop" alt="由比ガ浜のセカンドハウス" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=640&h=480&fit=crop&q=65" alt="由比ガ浜のセカンドハウス" loading="lazy">
             </figure>
             <div class="works-body">
               <span class="works-meta">Second House / Yuigahama</span>
@@ -1170,7 +1187,7 @@
           </article>
           <article class="works-card fade-up delay-1">
             <figure>
-              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=640&h=480&fit=crop" alt="腰越のクリニック外観" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=640&h=480&fit=crop&q=65" alt="腰越のクリニック外観" loading="lazy">
             </figure>
             <div class="works-body">
               <span class="works-meta">Clinic / Koshigoe</span>
@@ -1180,7 +1197,7 @@
           </article>
           <article class="works-card fade-up delay-2">
             <figure>
-              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=640&h=480&fit=crop" alt="長谷の集合住宅" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=640&h=480&fit=crop&q=65" alt="長谷の集合住宅" loading="lazy">
             </figure>
             <div class="works-body">
               <span class="works-meta">Housing / Hase</span>
@@ -1203,7 +1220,7 @@
         <div class="strengths-grid">
           <article class="strength-card fade-up">
             <figure>
-              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop" alt="設計図面と青写真" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=480&h=320&fit=crop&q=65" alt="設計図面と青写真" loading="lazy">
             </figure>
             <div class="strength-body">
               <span class="strength-meta">01 Planning Precision</span>
@@ -1213,7 +1230,7 @@
           </article>
           <article class="strength-card fade-up delay-1">
             <figure>
-              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop" alt="建築模型のクローズアップ" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=480&h=320&fit=crop&q=65" alt="建築模型のクローズアップ" loading="lazy">
             </figure>
             <div class="strength-body">
               <span class="strength-meta">02 Material Balance</span>
@@ -1223,7 +1240,7 @@
           </article>
           <article class="strength-card fade-up delay-2">
             <figure>
-              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&h=400&fit=crop" alt="朝の自然光が差す空間" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=480&h=320&fit=crop&q=65" alt="朝の自然光が差す空間" loading="lazy">
             </figure>
             <div class="strength-body">
               <span class="strength-meta">03 Light Direction</span>
@@ -1244,7 +1261,7 @@
         </div>
         <div class="flow-grid">
           <figure class="flow-image scale-in">
-            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" alt="現地での打ち合わせ風景" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=480&h=320&fit=crop&q=65" alt="現地での打ち合わせ風景" loading="lazy">
           </figure>
           <div class="flow-copy fade-up delay-1">
             <h3>必要なのは、完成形ではなく、これから大切にしたい感覚です。</h3>
@@ -1282,14 +1299,14 @@
         <div class="about-grid">
           <div class="portrait-stack scale-in">
             <figure class="about-portrait">
-              <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=500&fit=crop" alt="代表建築家 森島健" loading="lazy">
+              <img src="images/profile-mizunagi.jpg" alt="代表建築家 水凪 恒一" loading="lazy">
             </figure>
             <div class="mini-grid">
               <figure class="mini-visual">
-                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop" alt="打ち合わせスペース" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop&q=65" alt="打ち合わせスペース" loading="lazy">
               </figure>
               <figure class="mini-visual">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop" alt="事務所エントランス" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop&q=65" alt="事務所エントランス" loading="lazy">
               </figure>
             </div>
           </div>
@@ -1356,7 +1373,7 @@
             </ul>
           </div>
           <div class="access-visual scale-in">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="設計事務所の内装" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=480&h=320&fit=crop&q=65" alt="設計事務所の内装" loading="lazy">
             <div class="access-map">
               <div>
                 <span class="notice">Meeting Lounge</span>
@@ -1372,14 +1389,14 @@
         <div class="detail-grid" style="margin-top: 22px;">
           <article class="detail-card fade-up">
             <figure>
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop" alt="木材とコンクリートの素材感" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=480&h=320&fit=crop&q=65" alt="木材とコンクリートの素材感" loading="lazy">
             </figure>
             <h3>打ち合わせで確認すること</h3>
             <p>敷地、用途、予算、完成希望時期、暮らし方や営業形態の優先順位を中心に整理します。</p>
           </article>
           <article class="detail-card fade-up delay-1">
             <figure>
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop" alt="事務所エントランス" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop&q=65" alt="事務所エントランス" loading="lazy">
             </figure>
             <h3>相談前の準備</h3>
             <p>土地資料や既存図面があれば共有ください。未確定の段階でも、検討の順序を一緒に組み立てます。</p>
@@ -1419,6 +1436,7 @@
         </div>
       </div>
     </div>
-  </footer>
+    <p style="text-align:center;font-size:0.75rem;color:var(--text-light);padding:8px 0;">※ SateOnの制作イメージです。実在する店舗・企業ではありません。</p>
+</footer>
 </body>
 </html>
