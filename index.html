@@ -1,4 +1,4 @@
-<!-- v1.6 -->
+<!-- v1.7 -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -89,7 +89,7 @@
       display: block;
       width: 100%;
       height: auto;
-      background: var(--bg-alt);
+      background: transparent;
     }
 
     a {
@@ -491,14 +491,16 @@
 
     .philosophy-visuals .card-image {
       height: 100%;
-      min-height: 320px;
+      min-height: 280px;
+      max-height: 560px;
     }
 
     .philosophy-visuals .card-image img {
+      width: 100%;
       height: 100%;
       aspect-ratio: unset;
       object-fit: cover;
-      object-position: center;
+      object-position: center 30%;
     }
 
     .card-image,
@@ -525,19 +527,10 @@
     .detail-card img {
       aspect-ratio: 4 / 3;
       object-fit: cover;
-      transition: transform 0.7s ease;
     }
 
     .about-portrait img {
       aspect-ratio: 4 / 5;
-    }
-
-    .card-image:hover img,
-    .works-card:hover img,
-    .strength-card:hover img,
-    .mini-visual:hover img,
-    .detail-card:hover img {
-      transform: scale(1.04);
     }
 
     .detail-grid {
@@ -549,11 +542,13 @@
 
     .detail-card {
       display: grid;
+      grid-template-rows: auto 1fr;
       gap: 12px;
       padding: 18px;
       border: 1px solid var(--line);
       background: #fff;
       border-radius: var(--r);
+      overflow: hidden;
     }
 
     .detail-card h3 {
@@ -571,7 +566,7 @@
     .works-card {
       position: relative;
       display: grid;
-      grid-template-rows: auto auto;
+      grid-template-rows: auto 1fr;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--r);
@@ -633,6 +628,7 @@
 
     .strength-card {
       display: grid;
+      grid-template-rows: auto 1fr;
       background: linear-gradient(180deg, rgba(242, 240, 236, 0.65) 0%, rgba(250, 250, 248, 1) 100%);
       border: 1px solid var(--line);
       border-radius: var(--r);
