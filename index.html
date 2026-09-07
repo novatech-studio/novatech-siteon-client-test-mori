@@ -1074,9 +1074,12 @@
         position: relative;
       }
 
+      /* パネル位置は固定pxではなくヘッダー実高に追従させる（rules.md 51）。
+         ヘッダー内テキストの折り返しで実高が変わると、固定px参照ではパネルが
+         ヘッダーの裏に潜って先頭が隠れる。 */
       .site-nav {
-        position: fixed;
-        inset: 84px 0 auto 0;
+        position: absolute;
+        inset: 100% 0 auto 0;
         background: var(--bg);
         border-bottom: 1px solid var(--line);
         padding: 20px 20px 28px;
