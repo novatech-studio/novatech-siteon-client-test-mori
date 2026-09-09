@@ -433,40 +433,10 @@
       color: rgba(245, 242, 235, 0.84);
     }
 
-    .marquee {
-      overflow: hidden;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: var(--bg-alt);
-    }
 
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      animation: marquee 28s linear infinite;
-    }
 
-    .marquee-track span {
-      display: inline-flex;
-      align-items: center;
-      gap: 18px;
-      padding: 18px 22px;
-      color: var(--text-mid);
-      font-size: 0.82rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
 
-    .marquee-track span::after {
-      content: "•";
-      color: var(--accent);
-    }
 
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
 
     main section {
       padding: var(--space-lg) 0;
@@ -1043,9 +1013,6 @@
         transition-duration: 0.01ms !important;
       }
 
-      .marquee-track {
-        animation: none;
-      }
     }
 
     @media (max-width: 1040px) {
