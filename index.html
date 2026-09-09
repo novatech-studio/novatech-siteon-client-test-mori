@@ -180,6 +180,9 @@
     .brand-lockup {
       display: grid;
       gap: 4px;
+      /* 2行目を消して高さが 26px まで縮み、タップ領域 44px を割った（rules 30）。
+         行数に依存しないよう下限を持たせる。 */
+      min-height: 44px;
     }
 
     .brand-lockup strong {
@@ -237,7 +240,7 @@
       height: 44px;
       background: transparent;
       border: 1px solid var(--line);
-      border-radius: 3px;
+      border-radius: var(--r);
       cursor: pointer;
       color: var(--text);
       flex-shrink: 0;
@@ -345,7 +348,7 @@
       justify-content: center;
       min-height: 48px;
       padding: 0 22px;
-      border-radius: 8px !important;
+      border-radius: calc(var(--r) * 2);
       border: none;
       font-size: 0.88rem;
       letter-spacing: 0.1em;
@@ -364,15 +367,15 @@
     }
 
     .hero .button-subtle {
-      border: 1px solid rgba(245, 242, 235, 0.35) !important;
-      color: #f5f2eb !important;
+      border: 1px solid rgba(245, 242, 235, 0.35);
+      color: #f5f2eb;
       background: rgba(245, 242, 235, 0.06);
     }
 
     .hero .button-subtle:hover,
     .hero .button-subtle:focus-visible {
-      background: rgba(245, 242, 235, 0.16) !important;
-      color: #f5f2eb !important;
+      background: rgba(245, 242, 235, 0.16);
+      color: #f5f2eb;
     }
 
     .button:hover,
@@ -383,15 +386,15 @@
     }
 
     .button-subtle {
-      border: 1px solid var(--accent) !important;
+      border: 1px solid var(--accent);
       color: var(--accent);
       background: transparent;
     }
 
     .button-subtle:hover,
     .button-subtle:focus-visible {
-      background: var(--accent) !important;
-      color: #fff !important;
+      background: var(--accent);
+      color: #fff;
     }
 
     .hero-aside {
@@ -879,19 +882,19 @@
 
     .cta-actions {
       display: flex;
-      flex-wrap: nowrap !important;
+      flex-wrap: nowrap;
       gap: 1.5rem;
       align-items: center;
-      justify-content: center !important;
+      justify-content: center;
       margin-top: 2rem;
     }
 
     .cta-actions .button,
     .cta-actions .button-subtle {
-      padding: 1rem 2.5rem !important;
-      font-size: 0.85rem !important;
-      border-radius: 8px !important;
-      letter-spacing: 0.1em !important;
+      padding: 1rem 2.5rem;
+      font-size: 0.85rem;
+      border-radius: calc(var(--r) * 2);
+      letter-spacing: 0.1em;
       min-width: 200px;
       text-align: center;
     }
@@ -903,15 +906,15 @@
     }
 
     .cta-actions .button-subtle {
-      border: 1px solid rgba(255, 255, 255, 0.3) !important;
-      color: rgba(255, 255, 255, 0.85) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.85);
       background: transparent;
     }
 
     .cta-actions .button-subtle:hover,
     .cta-actions .button-subtle:focus-visible {
-      background: rgba(255, 255, 255, 0.1) !important;
-      color: #fff !important;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
     }
 
     .site-footer {
@@ -951,17 +954,22 @@
       font-size: 0.92rem;
     }
 
-    .demo-notice {
-      color: var(--text-light);
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
 
     .fade-up,
     .scale-in {
       opacity: 1;
       transform: none;
+    }
+
+
+    /* デモ注記。色は footer から継承させる（ハードコードするとフッターの
+       配色を変えたときに取り残される）。 */
+    .demo-note {
+      margin: 0;
+      padding: 12px 0 16px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: inherit;
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -1249,7 +1257,6 @@
     <div class="header-inner">
       <a class="brand-lockup" href="#top" aria-label="Atelique Mora トップへ戻る">
         <strong>Atelique Mora</strong>
-        <span>SateOn Architectural Studio</span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-menu" aria-label="メニューを開く"><span class="toggle-bar" aria-hidden="true"></span></button>
       <nav class="site-nav" id="site-nav-menu" aria-label="主要ナビゲーション">
@@ -1594,13 +1601,12 @@
           <p>アトリーク・モラ設計事務所 / 神奈川県鎌倉市由比ガ浜1-88-88</p>
         </div>
         <div class="footer-meta">
-          <div class="demo-notice">SateOn Demo Site</div>
           <div>写真はイメージです</div>
           <div>© 2026 Atelique Mora</div>
         </div>
       </div>
     </div>
-    <p style="text-align:center;font-size:0.75rem;color:var(--text-light);padding:8px 0;">※ SateOnの制作イメージです。実在する店舗・企業ではありません。</p>
+  <p class="demo-note">※ SateOnの制作イメージです。実在する店舗・企業ではありません。</p>
 </footer>
   <script>
     // ハンバーガーメニュー
