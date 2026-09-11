@@ -51,8 +51,8 @@
       --text: #2A2824;
       --text-mid: #5A5650;
       --text-light: #78726B;  /* WCAG AA 4.5:1（旧 #7A746C は 4.42）*/
-      --accent: #66745D;
-      --accent-rgb: 102, 116, 93;
+      --accent: #5E6C55;
+      --accent-rgb: 94, 108, 85;
       --line: #E0DCD6;
       --r: 4px;
       --container: 1180px;
@@ -210,7 +210,7 @@
 
     .brand-lockup strong {
       font-family: var(--font-display);
-      font-size: clamp(1.6rem, 3vw, 2rem);
+      font-size: var(--t-subheading);
       font-weight: 500;
       line-height: 1;
       letter-spacing: 0.08em;
@@ -302,7 +302,7 @@
       inset: 0;
       background:
         linear-gradient(120deg, rgba(250, 250, 248, 0.06) 0%, rgba(250, 250, 248, 0) 45%),
-        linear-gradient(0deg, rgba(42, 40, 36, 0.4) 0%, rgba(42, 40, 36, 0) 42%);
+        linear-gradient(0deg, rgba(42, 40, 36, 0.44) 0%, rgba(42, 40, 36, 0.16) 52%, rgba(42, 40, 36, 0) 78%);
       pointer-events: none;
     }
 
@@ -371,7 +371,7 @@
       justify-content: center;
       min-height: 48px;
       padding: 0 22px;
-      border-radius: calc(var(--r) * 2);
+      border-radius: var(--r);
       border: none;
       font-size: var(--t-small);
       letter-spacing: 0.1em;
@@ -440,7 +440,7 @@
     .hero-aside strong {
       display: block;
       font-family: var(--font-display);
-      font-size: 2rem;
+      font-size: var(--t-subheading);
       font-weight: 400;
       line-height: 1;
       letter-spacing: 0.08em;
@@ -520,7 +520,7 @@
 
     .philosophy-text strong {
       font-family: var(--font-serif);
-      font-size: clamp(1.3rem, 2vw, 1.6rem);
+      font-size: var(--t-subheading);
       font-weight: 400;
       line-height: 1.4;
       color: var(--accent);
@@ -917,7 +917,7 @@
     .cta-actions .button-subtle {
       padding: 1rem 2.5rem;
       font-size: var(--t-small);
-      border-radius: calc(var(--r) * 2);
+      border-radius: var(--r);
       letter-spacing: 0.1em;
       min-width: 200px;
       text-align: center;
@@ -965,7 +965,7 @@
     .footer-brand strong {
       display: block;
       font-family: var(--font-display);
-      font-size: 1.8rem;
+      font-size: var(--t-subheading);
       font-weight: 500;
       letter-spacing: 0.08em;
       line-height: 1;
@@ -1164,7 +1164,9 @@
 
       .section-head h2,
       .cta-panel h2 {
-        font-size: clamp(1.9rem, 8vw, 2.8rem);
+        /* 2026-09-11: 8vw だと 390px で 31.2px になり、1行 11文字しか入らない。
+           25文字の見出しが4行に割れて1行 6文字まで落ちていた（rules.md 77）。 */
+        font-size: clamp(1.6rem, 6.4vw, 2.4rem);
       }
 
       .hero h1 {
@@ -1189,7 +1191,11 @@
        grid / flex の min-content 幅にも効かせるため全要素に指定する。 */
     body,
     body * {
-      overflow-wrap: anywhere;
+      /* 2026-09-11 rules.md 78: anywhere は禁則（line-break: strict）を無効にし、
+         長音符「ー」や句読点を行頭に孤立させる。break-word なら禁則が効く。
+         break-word は min-content 幅を縮めないため、37/39（minmax(0,1fr) /
+         min-width: 0）を満たしていることが前提になる。 */
+      overflow-wrap: break-word;
     }
 
     /* 1c. 日本語の禁則処理（rules.md cat9 改行）
@@ -1336,7 +1342,7 @@
       <div class="container">
         <div class="section-head fade-up">
           <span class="section-kicker" lang="en">Philosophy 01</span>
-          <h2>光の巡りと余白の深さが、建築の居心地を決める</h2>
+          <h2>光の巡りと<wbr>余白の深さが、<wbr>建築の居心地を<wbr>決める</h2>
           <p>Atelique Moraは、目立つ造形よりも、住み続けるほど輪郭が美しくなる空間を志向します。朝と夕方で違う表情を見せる光、木と左官と金属が静かに響き合う素材、そして暮らしの変化を受け止める余白。その均衡を、敷地の条件と対話しながら設計します。</p>
         </div>
         <div class="philosophy-grid">
@@ -1383,7 +1389,7 @@
       <div class="container">
         <div class="section-head fade-up">
           <span class="section-kicker" lang="en">Works 02</span>
-          <h2>住宅から商空間まで、土地の気配に応答した六つの実績</h2>
+          <h2>住宅から商空間まで、<wbr>土地の気配に<wbr>応答した<wbr>六つの実績</h2>
           <p>敷地の制約を隠すのではなく、計画の骨格へ変えていくこと。Atelique Moraの実績は、景色の切り取り方、素材の重ね方、動線の解き方に、その姿勢が現れています。</p>
         </div>
         <div class="works-grid">
@@ -1456,7 +1462,7 @@
       <div class="container">
         <div class="section-head fade-up">
           <span class="section-kicker" lang="en">Strengths 03</span>
-          <h2>構想力、検討精度、そして光の扱いにおける三つの強み</h2>
+          <h2>構想力、検討精度、<wbr>そして光の扱いに<wbr>おける三つの強み</h2>
           <p>設計は美しいスケッチだけでは完結しません。最初の構想から施工段階の監理まで、空間の質を損なわないための検討を重ねます。</p>
         </div>
         <div class="strengths-grid">
@@ -1498,7 +1504,7 @@
       <div class="container">
         <div class="section-head fade-up">
           <span class="section-kicker" lang="en">Flow 04</span>
-          <h2>対話から監理まで、計画を静かに前へ進める設計の流れ</h2>
+          <h2>対話から監理まで、<wbr>計画を静かに<wbr>前へ進める<wbr>設計の流れ</h2>
           <p>相談時点で構えすぎる必要はありません。まだ曖昧な理想であっても、条件を一緒に読み解きながら、現実的で品位ある建築の姿へ整えていきます。</p>
         </div>
         <div class="flow-grid">
@@ -1535,7 +1541,7 @@
       <div class="container">
         <div class="section-head fade-up">
           <span class="section-kicker" lang="en">About 05</span>
-          <h2>海と街のあいだの鎌倉で、静かな強さをもつ建築を</h2>
+          <h2>海と街のあいだの<wbr>鎌倉で、<wbr>静かな強さをもつ<wbr>建築を</h2>
           <p>アトリーク・モラ設計事務所は、住宅、リノベーション、店舗設計を手がけています。敷地の条件と使い手の感覚の間にある繊細な余白を、設計の対象と考えています。</p>
         </div>
         <div class="about-grid">
@@ -1546,7 +1552,7 @@
           </div>
           <div class="about-copy fade-up delay-1">
             <h3>代表 水凪恒一 / 一級建築士</h3>
-            <p>建築の印象は、派手な造形よりも、光の届き方、壁の厚み、視線の抜け方といった細部で決まると私たちは考えています。Atelique Moraでは、住まい手や使い手の所作が美しく見える寸法感を大切にし、日常の背景として長く機能する建築を目指します。</p>
+            <p>建築の印象は、派手な造形よりも、光の届き方、壁の厚み、視線の抜け方といった細部で決まると私たちは考えています。Atelique Moraでは、住まい手や使い手の所作が美しく見える寸法感を大切にしています。日常の背景として長く機能する建築を目指します。</p>
             <p>小規模な事務所だからこそ、初回相談から設計監理まで視点を分断せずに進められることが強みです。打ち合わせでは要望をただ受け取るのではなく、本当に必要な余白と機能を見極め、計画にとって重要な判断を一つずつ共有します。</p>
             <dl class="info-list">
               <div>
@@ -1575,7 +1581,7 @@
       <div class="container">
         <div class="section-head fade-up">
           <span class="section-kicker" lang="en">Access 06</span>
-          <h2>由比ガ浜の穏やかな通りに面した、小さな設計事務所です</h2>
+          <h2>由比ガ浜の<wbr>穏やかな通りに面した、<wbr>小さな<wbr>設計事務所です</h2>
           <p>初回相談は予約制です。敷地資料や図面がなくても、検討中の内容をお話しいただければ、進め方と必要な整理事項をお伝えします。</p>
         </div>
         <div class="access-grid">
@@ -1623,7 +1629,7 @@
         <div class="cta-panel fade-up">
           <div>
             <span class="section-kicker" style="color: rgba(245,242,235,0.72);" lang="en">Contact</span>
-            <h2>相談の初回整理から、設計の方向性をご提案します</h2>
+            <h2>相談の初回整理から、<wbr>設計の方向性を<wbr>ご提案します</h2>
             <p>住宅、店舗、リノベーションのいずれも、計画の初期段階で整理の質が変わります。ご希望の用途と時期、現時点での悩みをお聞かせください。<strong>Atelique Mora</strong>が、静かで強い建築の輪郭を描きます。</p>
           </div>
           <div class="cta-actions">
@@ -1679,5 +1685,130 @@
       });
     })();
   </script>
+<!-- モバイルメニューのフォーカストラップと背面スクロール固定（共通 / rules.md 33） -->
+<script>
+  (function () {
+    var FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,summary,[tabindex]:not([tabindex="-1"])';
+    var toggle = null;
+    var cands = document.querySelectorAll('button[aria-expanded],[role=button][aria-expanded],a[aria-expanded]');
+    for (var i = 0; i < cands.length; i++) {
+      var c = cands[i];
+      if (c.closest('header,nav') && c.getBoundingClientRect().top < 200) { toggle = c; break; }
+    }
+    if (!toggle) return;
+
+    var panel = null;
+    var id = toggle.getAttribute('aria-controls');
+    if (id) panel = document.getElementById(id);
+
+    var findPanel = function () {
+      if (panel) return panel;
+      // aria-controls を持たないサイト用。開いたときに一番大きく見えているナビを使う
+      var best = null, area = 0;
+      var list = document.querySelectorAll('nav,[role=dialog],.mobile-menu,.nav-panel,.menu-panel');
+      for (var i = 0; i < list.length; i++) {
+        var e = list[i];
+        if (e === toggle || e.contains(toggle)) continue;
+        if (e.checkVisibility && !e.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })) continue;
+        var r = e.getBoundingClientRect();
+        if (r.width * r.height > area) { area = r.width * r.height; best = e; }
+      }
+      return best;
+    };
+
+    var lastFocused = null;
+    var scrollY = 0;
+    var locked = false;
+
+    var lock = function () {
+      if (locked) return;
+      locked = true;
+      scrollY = window.scrollY || window.pageYOffset;
+      var b = document.body;
+      b.style.position = 'fixed';
+      b.style.top = -scrollY + 'px';
+      b.style.left = '0';
+      b.style.right = '0';
+      b.style.width = '100%';
+    };
+    var unlock = function () {
+      if (!locked) return;
+      locked = false;
+      var b = document.body;
+      b.style.position = '';
+      b.style.top = '';
+      b.style.left = '';
+      b.style.right = '';
+      b.style.width = '';
+      window.scrollTo(0, scrollY);
+    };
+
+    var isOpen = function () { return toggle.getAttribute('aria-expanded') === 'true'; };
+
+    var onOpen = function () {
+      var p = findPanel();
+      if (!p) return;
+      // サイト側が先にパネル内へフォーカスを移していることがある。
+      // その要素を「戻り先」に覚えると、閉じたあと消えた要素へ戻そうとして
+      // フォーカスが body に落ちる。パネルの外にある要素だけを覚える。
+      var prev = document.activeElement;
+      lastFocused = (prev && !p.contains(prev) && prev !== document.body) ? prev : toggle;
+      lock();
+      if (!p.contains(document.activeElement)) {
+        var f = p.querySelector(FOCUSABLE);
+        if (f) f.focus();
+      }
+    };
+    var onClose = function () {
+      unlock();
+      var back = (lastFocused && document.body.contains(lastFocused)) ? lastFocused : toggle;
+      var r = back.getBoundingClientRect();
+      if (!r.width || !r.height) back = toggle;
+      back.focus();
+      lastFocused = null;
+    };
+
+    new MutationObserver(function () {
+      if (isOpen()) onOpen(); else if (locked || lastFocused) onClose();
+    }).observe(toggle, { attributes: true, attributeFilter: ['aria-expanded'] });
+
+    document.addEventListener('keydown', function (ev) {
+      if (!isOpen()) return;
+      var p = findPanel();
+      if (!p) return;
+
+      if (ev.key === 'Escape') {
+        // サイト側が自分で閉じることがある。閉じていなければこちらで閉じる
+        setTimeout(function () { if (isOpen()) toggle.click(); }, 0);
+        return;
+      }
+      if (ev.key !== 'Tab') return;
+
+      var items = [];
+      var all = p.querySelectorAll(FOCUSABLE);
+      for (var i = 0; i < all.length; i++) {
+        var r = all[i].getBoundingClientRect();
+        if (r.width > 0 && r.height > 0) items.push(all[i]);
+      }
+      if (!items.length) return;
+      items.push(toggle);           // 閉じるボタンも輪の中に入れる
+      // Tab の順番は DOM 順で決まる。開閉ボタンがパネルより前にあるサイトでは
+      // 配列の末尾＝Tab の最後、にならないため、必ず DOM 順に並べ直す。
+      items.sort(function (x, y) {
+        var pos = x.compareDocumentPosition(y);
+        if (pos & Node.DOCUMENT_POSITION_FOLLOWING) return -1;
+        if (pos & Node.DOCUMENT_POSITION_PRECEDING) return 1;
+        return 0;
+      });
+      var first = items[0], last = items[items.length - 1];
+      var a = document.activeElement;
+      var inside = p.contains(a) || a === toggle;
+
+      if (!inside) { ev.preventDefault(); first.focus(); }
+      else if (ev.shiftKey && a === first) { ev.preventDefault(); last.focus(); }
+      else if (!ev.shiftKey && a === last) { ev.preventDefault(); first.focus(); }
+    }, true);
+  })();
+</script>
 </body>
 </html>
